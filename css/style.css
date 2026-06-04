@@ -1,162 +1,155 @@
-/* تنسيقات عامة للصفحة والخطوط */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Cairo", sans-serif;
 }
 
-body {
-    background-color: #fdfdfd; /* لون الخلفية البيضاء المريحة */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+body{
+    background: linear-gradient(135deg,#f3f6fb,#dfe9f3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
 }
 
-/* الكارت الأزرق الخارجي المحيط بالبطاقة */
-.login-container {
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 420px;
-    padding: 30px 25px;
-    border: 3px solid #3b6aa7; /* الإطار الأزرق الغامق */
-    border-radius: 30px; /* الزوايا الدائرية الاحترافية */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    text-align: center;
+/* صندوق تسجيل الدخول */
+.login-container{
+    width:100%;
+    max-width:360px; /* أصغر */
+    background:#fff;
+    padding:28px 24px;
+    border-radius:22px;
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+    text-align:center;
+    transition:.3s;
 }
 
-/* تصميم أيقونة القفل في الأعلى */
-.lock-icon-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
+.login-container:hover{
+    transform:translateY(-3px);
 }
 
-.lock-icon {
-    background-color: #3b6aa7;
-    color: white;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
+/* أيقونة القفل */
+.lock-icon{
+    width:70px;
+    height:70px;
+    margin:0 auto 16px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#1e88e5,#1565c0);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    box-shadow:0 8px 20px rgba(30,136,229,.25);
 }
 
-/* العناوين */
-h2 {
-    color: #72202b; /* اللون العنابي المكتوب بيه تسجيل الدخول */
-    font-size: 24px;
-    margin-bottom: 15px;
-    font-weight: bold;
+h2{
+    font-size:24px;
+    color:#222;
+    margin-bottom:6px;
 }
 
-.company-name {
-    color: #611822;
-    background-color: #fff9f9; /* خلفية خفيفة جداً تحت اسم الشركة */
-    font-size: 16px;
-    padding: 8px;
-    margin-bottom: 25px;
-    font-weight: 500;
+.company-name{
+    color:#777;
+    font-size:13px;
+    margin-bottom:22px;
 }
 
-/* المجموعات المدخلة */
-.input-group {
-    text-align: right;
-    margin-bottom: 20px;
+/* الحقول */
+.input-group{
+    text-align:right;
+    margin-bottom:16px;
 }
 
-.input-group label {
-    display: block;
-    color: #1a1a1a;
-    font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 15px;
+.input-group label{
+    display:block;
+    font-size:14px;
+    color:#444;
+    margin-bottom:8px;
+    font-weight:600;
 }
 
-/* الحقول الافتراضية (رقم الهوية) */
-.input-group input[type="text"] {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #72202b; /* الإطار العنابي للحقل النشط */
-    border-radius: 6px;
-    background-color: #edf2f9; /* اللون المائل للأزرق الفاتح جداً داخل الحقل كما بالصورة */
-    font-size: 16px;
-    outline: none;
-    text-align: right;
+.input-group input{
+    width:100%;
+    height:48px;
+    border:1px solid #ddd;
+    border-radius:14px;
+    padding:0 14px;
+    font-size:14px;
+    transition:.3s;
+    outline:none;
 }
 
-/* غلاف حقل الباسورد لدمج زر العين بالداخل */
-.password-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
+.input-group input:focus{
+    border-color:#1e88e5;
+    box-shadow:0 0 0 4px rgba(30,136,229,.12);
 }
 
-.password-wrapper input {
-    width: 100%;
-    padding: 12px 50px 12px 15px; /* مسافة للعين */
-    border: 1px solid #7c65c1; /* إطار الباسورد المائل للبنفسجي في صورتك */
-    border-radius: 6px;
-    background-color: #edf2f9;
-    font-size: 16px;
-    outline: none;
+/* كلمة المرور */
+.password-wrapper{
+    position:relative;
 }
 
-/* زر العين */
-.toggle-password {
-    position: absolute;
-    left: 2px; /* وضع العين جهة اليسار لأن الكتابة عربي */
-    height: 90%;
-    width: 45px;
-    background: none;
-    border: none;
-    border-right: 1px solid #ccc; /* الخط الفاصل الصغير بجانب العين */
-    cursor: pointer;
-    color: #777;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.toggle-password{
+    position:absolute;
+    left:12px;
+    top:50%;
+    transform:translateY(-50%);
+    border:none;
+    background:none;
+    cursor:pointer;
+    color:#777;
+    font-size:16px;
 }
 
-/* زر تسجيل الدخول الكبير الأزرق */
-.submit-btn {
-    width: 100%;
-    background-color: #436fb6; /* نفس درجة الأزرق للزر */
-    color: white;
-    border: none;
-    padding: 14px;
-    font-size: 18px;
-    border-radius: 25px; /* زوايا دائرية كاملة للزر */
-    cursor: pointer;
-    font-weight: 500;
-    transition: background 0.2s;
-    margin-top: 10px;
+/* زر الدخول */
+.submit-btn{
+    width:100%;
+    height:50px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(
+        135deg,
+        #1e88e5,
+        #1565c0
+    );
+    color:#fff;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+    margin-top:10px;
 }
 
-.submit-btn:hover {
-    background-color: #335994; /* يغمق قليلاً عند تمرير الماوس */
+.submit-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:
+      0 8px 20px rgba(21,101,192,.25);
 }
 
-/* رابط إنشاء الحساب السفلي */
-.register-link {
-    margin-top: 25px;
+/* رابط إنشاء حساب */
+.register-link{
+    margin-top:18px;
 }
 
-.register-link a {
-    display: inline-block;
-    background-color: #f1f1f1;
-    color: #333;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 14px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+.register-link a{
+    color:#1565c0;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
 }
 
-.register-link a:hover {
-    background-color: #e5e5e5;
+.register-link a:hover{
+    text-decoration:underline;
+}
+
+/* موبايل */
+@media(max-width:480px){
+    .login-container{
+        max-width:330px;
+        padding:24px 20px;
+    }
 }
