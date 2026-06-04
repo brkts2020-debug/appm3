@@ -1,248 +1,272 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Cairo',sans-serif;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:
-    linear-gradient(135deg,#0f172a,#1e293b);
-    overflow:hidden;
-    position:relative;
-}
+    <title>تسجيل الدخول | شركة الأصايل</title>
 
-/* دوائر احترافية بالخلفية */
-body::before,
-body::after{
-    content:'';
-    position:absolute;
-    border-radius:50%;
-    filter:blur(100px);
-    opacity:.5;
-}
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-body::before{
-    width:300px;
-    height:300px;
-    background:#2563eb;
-    top:-100px;
-    right:-80px;
-}
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-body::after{
-    width:260px;
-    height:260px;
-    background:#06b6d4;
-    bottom:-80px;
-    left:-70px;
-}
+<body>
 
-/* الكارت */
-.login-container{
-    width:100%;
-    max-width:360px;
-    padding:32px 26px;
-    border-radius:28px;
+    <main class="page-wrapper">
 
-    background:
-    rgba(255,255,255,.08);
+        <section class="login-card">
 
-    border:1px solid
-    rgba(255,255,255,.12);
+            <!-- Header -->
+            <header class="login-header">
 
-    backdrop-filter:blur(20px);
+                <div class="brand-icon">
+                    <i class="fas fa-building-shield"></i>
+                </div>
 
-    box-shadow:
-    0 20px 50px rgba(0,0,0,.35);
+                <h1>مرحبًا بعودتك</h1>
 
-    position:relative;
-    z-index:2;
-    text-align:center;
-}
+                <p class="company-name">
+                    شركة الأصايل للمقاولات العامة - مصر
+                </p>
 
-/* القفل */
-.lock-icon-wrapper{
-    margin-bottom:18px;
-}
+                <p class="login-text">
+                    سجل الدخول للوصول إلى النظام
+                </p>
 
-.lock-icon{
-    width:78px;
-    height:78px;
-    margin:auto;
+            </header>
 
-    border-radius:22px;
+            <!-- Form -->
+            <form id="loginForm"
+                  class="login-form"
+                  novalidate>
 
-    background:
-    linear-gradient(
-    135deg,
-    #3b82f6,
-    #2563eb);
+                <!-- الهوية -->
+                <div class="input-group">
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+                    <label for="identity">
+                        رقم الهوية / الإقامة
+                    </label>
 
-    color:#fff;
-    font-size:30px;
+                    <div class="input-wrapper">
 
-    box-shadow:
-    0 10px 25px
-    rgba(37,99,235,.35);
-}
+                        <i class="fas fa-id-card input-icon"></i>
 
-/* العنوان */
-h1{
-    color:#fff;
-    font-size:30px;
-    margin-bottom:6px;
-    font-weight:700;
-}
+                        <input
+                            type="text"
+                            id="identity"
+                            name="identity"
+                            inputmode="numeric"
+                            autocomplete="username"
+                            maxlength="20"
+                            placeholder="أدخل رقم الهوية أو الإقامة"
+                            required>
 
-.company-name{
-    color:rgba(255,255,255,.75);
-    font-size:13px;
-    margin-bottom:25px;
-}
+                    </div>
 
-/* الحقول */
-.input-group{
-    margin-bottom:18px;
-    text-align:right;
-}
+                    <small id="identityError"
+                           class="error-message">
+                    </small>
 
-.input-group label{
-    display:block;
-    color:#fff;
-    margin-bottom:8px;
-    font-size:14px;
-    font-weight:600;
-}
+                </div>
 
-.input-group input{
-    width:100%;
-    height:52px;
-    border-radius:16px;
-    border:1px solid
-    rgba(255,255,255,.10);
+                <!-- كلمة المرور -->
+                <div class="input-group">
 
-    background:
-    rgba(255,255,255,.08);
+                    <div class="label-row">
+                        <label for="password">
+                            كلمة المرور
+                        </label>
 
-    outline:none;
-    padding:0 16px;
-    color:#fff;
-    font-size:14px;
-    transition:.3s;
-}
+                        <a href="#"
+                           class="forgot-password">
+                            نسيت كلمة المرور؟
+                        </a>
+                    </div>
 
-/* placeholder */
-.input-group input::placeholder{
-    color:rgba(255,255,255,.45);
-}
+                    <div class="input-wrapper password-wrapper">
 
-/* focus */
-.input-group input:focus{
-    border-color:#60a5fa;
+                        <i class="fas fa-lock input-icon"></i>
 
-    box-shadow:
-    0 0 0 4px
-    rgba(96,165,250,.15);
-}
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            autocomplete="current-password"
+                            minlength="6"
+                            placeholder="••••••••"
+                            required>
 
-/* كلمة المرور */
-.password-wrapper{
-    position:relative;
-}
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-password"
+                            aria-label="إظهار كلمة المرور">
 
-.toggle-password{
-    position:absolute;
-    left:14px;
-    top:50%;
-    transform:translateY(-50%);
-    border:none;
-    background:none;
-    cursor:pointer;
-    color:#cbd5e1;
-    font-size:18px;
-    transition:.3s;
-}
+                            <i class="far fa-eye"></i>
 
-.toggle-password:hover{
-    color:#fff;
-}
+                        </button>
 
-/* زر الدخول */
-.submit-btn{
-    width:100%;
-    height:54px;
-    border:none;
-    border-radius:18px;
+                    </div>
 
-    background:
-    linear-gradient(
-    135deg,
-    #2563eb,
-    #3b82f6);
+                    <small id="passwordError"
+                           class="error-message">
+                    </small>
 
-    color:#fff;
-    font-size:16px;
-    font-weight:700;
+                </div>
 
-    cursor:pointer;
-    transition:.3s;
-    margin-top:8px;
-}
+                <!-- تذكرني -->
+                <div class="form-options">
 
-.submit-btn:hover{
-    transform:translateY(-2px);
+                    <label class="remember-me">
 
-    box-shadow:
-    0 10px 30px
-    rgba(37,99,235,.35);
-}
+                        <input type="checkbox">
 
-/* إنشاء حساب */
-.register-link{
-    margin-top:18px;
-}
+                        <span>
+                            تذكر بيانات الدخول
+                        </span>
 
-.register-link a{
-    color:#bfdbfe;
-    text-decoration:none;
-    font-size:13px;
-    transition:.3s;
-}
+                    </label>
 
-.register-link a:hover{
-    color:#fff;
-}
+                </div>
 
-/* رسائل الخطأ */
-.error-message{
-    display:block;
-    margin-top:6px;
-    font-size:12px;
-    color:#fca5a5;
-}
+                <!-- زر الدخول -->
+                <button
+                    type="submit"
+                    class="submit-btn">
 
-/* موبايل */
-@media(max-width:420px){
+                    <span>تسجيل الدخول</span>
 
-    .login-container{
-        width:92%;
-        padding:28px 20px;
-        border-radius:24px;
-    }
+                    <i class="fas fa-arrow-left"></i>
 
-    h1{
-        font-size:25px;
-    }
+                </button>
 
-}
+            </form>
+
+            <!-- Footer -->
+            <footer class="login-footer">
+
+                <p>
+                    لا تمتلك حسابًا؟
+                    <a href="register.html">
+                        إنشاء حساب جديد
+                    </a>
+                </p>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+    <script>
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const identityInput =
+            document.getElementById("identity");
+
+        const passwordInput =
+            document.getElementById("password");
+
+        const togglePassword =
+            document.getElementById("togglePassword");
+
+        const identityError =
+            document.getElementById("identityError");
+
+        const passwordError =
+            document.getElementById("passwordError");
+
+
+        // إظهار وإخفاء كلمة المرور
+        togglePassword.addEventListener(
+            "click",
+            () => {
+
+                const hidden =
+                    passwordInput.type ===
+                    "password";
+
+                passwordInput.type =
+                    hidden
+                    ? "text"
+                    : "password";
+
+                togglePassword
+                .querySelector("i")
+                .className =
+                    hidden
+                    ? "far fa-eye-slash"
+                    : "far fa-eye";
+            }
+        );
+
+
+        // أرقام فقط للهوية
+        identityInput.addEventListener(
+            "input",
+            () => {
+
+                identityInput.value =
+                    identityInput.value
+                    .replace(/\D/g, "");
+            }
+        );
+
+
+        // Validation
+        loginForm.addEventListener(
+            "submit",
+            (e) => {
+
+                e.preventDefault();
+
+                identityError.textContent = "";
+                passwordError.textContent = "";
+
+                let valid = true;
+
+                if (!identityInput.value.trim()) {
+
+                    identityError.textContent =
+                        "يرجى إدخال رقم الهوية";
+
+                    valid = false;
+                }
+
+                if (
+                    passwordInput.value.length < 6
+                ) {
+
+                    passwordError.textContent =
+                        "كلمة المرور قصيرة";
+
+                    valid = false;
+                }
+
+                if (valid) {
+
+                    console.log({
+                        identity:
+                        identityInput.value,
+
+                        password:
+                        passwordInput.value
+                    });
+
+                    alert(
+                        "تم تسجيل الدخول بنجاح"
+                    );
+                }
+            }
+        );
+    </script>
+
+</body>
+</html>
