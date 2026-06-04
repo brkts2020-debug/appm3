@@ -1,155 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Cairo',sans-serif;
 }
 
 body{
+    font-family:'Tajawal',sans-serif;
+    background:#f6f8f9;
+    min-height:100vh;
+}
+
+.page-container{
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:
-    linear-gradient(135deg,#0f172a,#1e3a8a);
-    overflow:hidden;
-    position:relative;
+    padding:20px;
 }
 
-/* خلفية احترافية */
-body::before,
-body::after{
-    content:'';
-    position:absolute;
-    border-radius:50%;
-    filter:blur(90px);
-}
-
-body::before{
-    width:280px;
-    height:280px;
-    background:#2563eb;
-    top:-80px;
-    right:-80px;
-}
-
-body::after{
-    width:250px;
-    height:250px;
-    background:#38bdf8;
-    bottom:-80px;
-    left:-80px;
-}
-
-/* الكارت */
-.login-container{
+.login-card{
     width:100%;
-    max-width:350px;
-    padding:30px 25px;
-    border-radius:28px;
-
-    background:
-    rgba(255,255,255,.12);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid
-    rgba(255,255,255,.15);
-
+    max-width:390px;
+    background:#fff;
+    border-radius:24px;
+    padding:36px 30px;
     box-shadow:
-    0 20px 45px rgba(0,0,0,.25);
-
-    text-align:center;
-    position:relative;
-    z-index:1;
+    0 10px 30px rgba(0,0,0,.06);
 }
 
-/* القفل */
-.lock-icon{
-    width:78px;
-    height:78px;
-    margin:auto auto 18px;
-    border-radius:22px;
+.logo-wrapper{
+    display:flex;
+    justify-content:center;
+    margin-bottom:22px;
+}
 
-    background:
-    linear-gradient(
-    135deg,
-    #3b82f6,
-    #60a5fa);
-
+.logo-circle{
+    width:72px;
+    height:72px;
+    border-radius:20px;
+    background:#0f766e;
     color:#fff;
     display:flex;
     justify-content:center;
     align-items:center;
     font-size:28px;
-
-    box-shadow:
-    0 10px 30px
-    rgba(59,130,246,.35);
 }
 
-h2{
-    color:#fff;
+.login-header{
+    text-align:center;
+    margin-bottom:28px;
+}
+
+.login-header h1{
     font-size:28px;
-    margin-bottom:6px;
-    font-weight:700;
+    color:#111827;
+    margin-bottom:8px;
 }
 
 .company-name{
-    color:rgba(255,255,255,.7);
-    font-size:13px;
-    margin-bottom:22px;
+    color:#0f766e;
+    font-weight:600;
+    margin-bottom:8px;
 }
 
-/* الحقول */
+.sub-text{
+    color:#6b7280;
+    font-size:14px;
+}
+
 .input-group{
-    margin-bottom:16px;
-    text-align:right;
+    margin-bottom:18px;
+}
+
+.label-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
 }
 
 .input-group label{
-    display:block;
-    margin-bottom:8px;
-    color:#fff;
-    font-size:14px;
-    font-weight:600;
+    font-weight:500;
+    color:#374151;
+}
+
+.input-wrapper{
+    position:relative;
+}
+
+.input-icon{
+    position:absolute;
+    right:16px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#9ca3af;
 }
 
 .input-group input{
     width:100%;
-    height:52px;
-    border:none;
+    height:54px;
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    background:#fff;
+    padding:0 48px;
+    font-size:15px;
     outline:none;
-    border-radius:16px;
-
-    background:
-    rgba(255,255,255,.12);
-
-    border:1px solid
-    rgba(255,255,255,.12);
-
-    padding:0 18px;
-    color:#fff;
-    font-size:14px;
-    transition:.3s;
-}
-
-.input-group input::placeholder{
-    color:rgba(255,255,255,.45);
+    transition:.2s;
 }
 
 .input-group input:focus{
-    border-color:#60a5fa;
+    border-color:#0f766e;
     box-shadow:
-    0 0 0 4px
-    rgba(96,165,250,.15);
-}
-
-/* كلمة المرور */
-.password-wrapper{
-    position:relative;
+    0 0 0 4px rgba(15,118,110,.08);
 }
 
 .toggle-password{
@@ -157,60 +121,61 @@ h2{
     left:14px;
     top:50%;
     transform:translateY(-50%);
-    background:none;
     border:none;
-    color:#d1d5db;
+    background:none;
     cursor:pointer;
-    font-size:18px;
+    color:#9ca3af;
 }
 
-/* زر الدخول */
+.forgot-link{
+    color:#0f766e;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.remember-row{
+    margin:18px 0;
+}
+
+.remember-me{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    color:#4b5563;
+}
+
 .submit-btn{
     width:100%;
     height:54px;
     border:none;
-    border-radius:18px;
-
-    background:
-    linear-gradient(
-    135deg,
-    #3b82f6,
-    #2563eb);
-
+    border-radius:14px;
+    background:#0f766e;
     color:#fff;
     font-size:16px;
     font-weight:700;
     cursor:pointer;
-    transition:.3s;
-    margin-top:8px;
+    transition:.2s;
 }
 
 .submit-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:
-    0 10px 30px
-    rgba(37,99,235,.35);
+    background:#115e59;
 }
 
-/* إنشاء حساب */
 .register-link{
-    margin-top:18px;
+    text-align:center;
+    margin-top:20px;
+    color:#6b7280;
 }
 
 .register-link a{
-    color:#bfdbfe;
+    color:#0f766e;
     text-decoration:none;
+    font-weight:600;
+}
+
+.error-message{
+    display:block;
+    margin-top:6px;
+    color:#dc2626;
     font-size:13px;
-}
-
-.register-link a:hover{
-    color:#fff;
-}
-
-/* موبايل */
-@media(max-width:420px){
-    .login-container{
-        width:92%;
-        padding:28px 20px;
-    }
 }
