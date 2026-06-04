@@ -1,0 +1,162 @@
+/* تنسيقات عامة للصفحة والخطوط */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fdfdfd; /* لون الخلفية البيضاء المريحة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* الكارت الأزرق الخارجي المحيط بالبطاقة */
+.login-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 30px 25px;
+    border: 3px solid #3b6aa7; /* الإطار الأزرق الغامق */
+    border-radius: 30px; /* الزوايا الدائرية الاحترافية */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+/* تصميم أيقونة القفل في الأعلى */
+.lock-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.lock-icon {
+    background-color: #3b6aa7;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+/* العناوين */
+h2 {
+    color: #72202b; /* اللون العنابي المكتوب بيه تسجيل الدخول */
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.company-name {
+    color: #611822;
+    background-color: #fff9f9; /* خلفية خفيفة جداً تحت اسم الشركة */
+    font-size: 16px;
+    padding: 8px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/* المجموعات المدخلة */
+.input-group {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #1a1a1a;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* الحقول الافتراضية (رقم الهوية) */
+.input-group input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #72202b; /* الإطار العنابي للحقل النشط */
+    border-radius: 6px;
+    background-color: #edf2f9; /* اللون المائل للأزرق الفاتح جداً داخل الحقل كما بالصورة */
+    font-size: 16px;
+    outline: none;
+    text-align: right;
+}
+
+/* غلاف حقل الباسورد لدمج زر العين بالداخل */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding: 12px 50px 12px 15px; /* مسافة للعين */
+    border: 1px solid #7c65c1; /* إطار الباسورد المائل للبنفسجي في صورتك */
+    border-radius: 6px;
+    background-color: #edf2f9;
+    font-size: 16px;
+    outline: none;
+}
+
+/* زر العين */
+.toggle-password {
+    position: absolute;
+    left: 2px; /* وضع العين جهة اليسار لأن الكتابة عربي */
+    height: 90%;
+    width: 45px;
+    background: none;
+    border: none;
+    border-right: 1px solid #ccc; /* الخط الفاصل الصغير بجانب العين */
+    cursor: pointer;
+    color: #777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* زر تسجيل الدخول الكبير الأزرق */
+.submit-btn {
+    width: 100%;
+    background-color: #436fb6; /* نفس درجة الأزرق للزر */
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 25px; /* زوايا دائرية كاملة للزر */
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #335994; /* يغمق قليلاً عند تمرير الماوس */
+}
+
+/* رابط إنشاء الحساب السفلي */
+.register-link {
+    margin-top: 25px;
+}
+
+.register-link a {
+    display: inline-block;
+    background-color: #f1f1f1;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.register-link a:hover {
+    background-color: #e5e5e5;
+}
