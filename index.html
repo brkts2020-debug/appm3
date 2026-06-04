@@ -1,193 +1,105 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل الدخول - شركة الأصايل</title>
 
-    <!-- ملف التنسيق -->
-    <link rel="stylesheet" href="css/style.css" />
-
-    <!-- أيقونات -->
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <main class="login-container">
+<div class="login-container">
 
-        <!-- أيقونة القفل -->
-        <div class="lock-icon-wrapper">
-            <div class="lock-icon">
-                <i class="fas fa-lock"></i>
-            </div>
+    <div class="lock-icon">
+        <i class="fas fa-lock"></i>
+    </div>
+
+    <h2>تسجيل الدخول</h2>
+    <p class="company-name">
+        شركة الأصايل للمقاولات العامة - مصر
+    </p>
+
+    <form id="loginForm">
+
+        <div class="input-group">
+            <label for="identity">
+                رقم الهوية / الإقامة
+            </label>
+
+            <input
+                type="text"
+                id="identity"
+                placeholder="أدخل رقم الهوية أو الإقامة"
+                required
+            >
         </div>
 
-        <!-- العنوان -->
-        <header>
-            <h1>تسجيل الدخول</h1>
-            <p class="company-name">
-                شركة الأصايل للمقاولات العامة
-            </p>
-        </header>
+        <div class="input-group">
+            <label for="password">
+                كلمة المرور
+            </label>
 
-        <!-- نموذج تسجيل الدخول -->
-        <form id="loginForm" novalidate>
-
-            <!-- رقم الهوية -->
-            <div class="input-group">
-                <label for="identity">
-                    رقم الهوية / الإقامة
-                </label>
+            <div class="password-wrapper">
 
                 <input
-                    type="text"
-                    id="identity"
-                    name="identity"
-                    placeholder="أدخل رقم الهوية أو الإقامة"
-                    inputmode="numeric"
-                    autocomplete="username"
-                    maxlength="20"
+                    type="password"
+                    id="password"
+                    placeholder="••••••••"
                     required
                 >
 
-                <small class="error-message" id="identityError"></small>
+                <button
+                    type="button"
+                    class="toggle-password"
+                    id="togglePassword"
+                >
+                    <i class="far fa-eye"></i>
+                </button>
+
             </div>
-
-            <!-- كلمة المرور -->
-            <div class="input-group">
-                <label for="password">
-                    كلمة المرور
-                </label>
-
-                <div class="password-wrapper">
-
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="••••••••"
-                        autocomplete="current-password"
-                        minlength="6"
-                        required
-                    >
-
-                    <button
-                        type="button"
-                        class="toggle-password"
-                        id="togglePassword"
-                        aria-label="إظهار كلمة المرور"
-                    >
-                        <i class="far fa-eye"></i>
-                    </button>
-                </div>
-
-                <small class="error-message" id="passwordError"></small>
-            </div>
-
-            <!-- زر الدخول -->
-            <button type="submit" class="submit-btn">
-                تسجيل الدخول
-            </button>
-
-        </form>
-
-        <!-- إنشاء حساب -->
-        <div class="register-link">
-            <a href="register.html">
-                لا أمتلك حساب؟ إنشاء حساب
-            </a>
         </div>
 
-    </main>
+        <button type="submit" class="submit-btn">
+            تسجيل دخول
+        </button>
 
-    <script>
-        // العناصر
-        const loginForm = document.getElementById("loginForm");
-        const identityInput = document.getElementById("identity");
-        const passwordInput = document.getElementById("password");
-        const togglePassword = document.getElementById("togglePassword");
+    </form>
 
-        const identityError =
-            document.getElementById("identityError");
+    <div class="register-link">
+        <a href="register.html">
+            لا أمتلك حساب؟ إنشاء حساب
+        </a>
+    </div>
 
-        const passwordError =
-            document.getElementById("passwordError");
+</div>
 
+<script>
+    const pass = document.getElementById("password"),
+          btn = document.getElementById("togglePassword"),
+          identity = document.getElementById("identity");
 
-        // إظهار وإخفاء كلمة المرور
-        togglePassword.addEventListener("click", () => {
+    // إظهار وإخفاء كلمة المرور
+    btn.onclick = () => {
+        pass.type =
+            pass.type === "password"
+            ? "text"
+            : "password";
 
-            const isPassword =
-                passwordInput.type === "password";
+        btn.innerHTML =
+            pass.type === "password"
+            ? '<i class="far fa-eye"></i>'
+            : '<i class="far fa-eye-slash"></i>';
+    };
 
-            passwordInput.type =
-                isPassword ? "text" : "password";
-
-            const icon =
-                togglePassword.querySelector("i");
-
-            icon.classList.toggle("fa-eye");
-            icon.classList.toggle("fa-eye-slash");
-
-            togglePassword.setAttribute(
-                "aria-label",
-                isPassword
-                    ? "إخفاء كلمة المرور"
-                    : "إظهار كلمة المرور"
-            );
-        });
-
-
-        // السماح بالأرقام فقط في الهوية
-        identityInput.addEventListener("input", () => {
-            identityInput.value =
-                identityInput.value.replace(/\D/g, "");
-        });
-
-
-        // التحقق من البيانات
-        loginForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            // تصفير الرسائل
-            identityError.textContent = "";
-            passwordError.textContent = "";
-
-            let isValid = true;
-
-            // تحقق الهوية
-            if (!identityInput.value.trim()) {
-                identityError.textContent =
-                    "يرجى إدخال رقم الهوية أو الإقامة";
-                isValid = false;
-            }
-
-            // تحقق كلمة المرور
-            if (passwordInput.value.length < 6) {
-                passwordError.textContent =
-                    "كلمة المرور يجب ألا تقل عن 6 أحرف";
-                isValid = false;
-            }
-
-            // نجاح التحقق
-            if (isValid) {
-
-                const loginData = {
-                    identity: identityInput.value,
-                    password: passwordInput.value
-                };
-
-                console.log("بيانات الدخول:", loginData);
-
-                // هنا ضع API أو عملية تسجيل الدخول
-                alert("تم تسجيل الدخول بنجاح");
-            }
-        });
-    </script>
+    // أرقام فقط للهوية
+    identity.oninput = () =>
+        identity.value =
+            identity.value.replace(/\D/g, "");
+</script>
 
 </body>
 </html>
