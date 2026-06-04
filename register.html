@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب جديد | شركة الأصايل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo-box">
+                <i class="fa-solid fa-building-user"></i>
+            </div>
+            <h2>إنشاء حساب جديد</h2>
+            <p>شركة الأصايل للمقاولات العامة</p>
+        </div>
 
+        <form id="registerForm">
+            <div class="input-group">
+                <label for="fullName">الاسم كامل</label>
+                <div class="input-wrapper">
+                    <input type="text" id="fullName" placeholder="أدخل اسمك الثلاثي" required>
+                    <i class="fa-solid fa-user input-icon"></i>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="phone">جوال</label>
+                <div class="input-wrapper phone-wrapper">
+                    <input type="tel" id="phone" placeholder="5xxxxxxxx" style="direction: ltr; text-align: right;" required>
+                    <span class="country-code"><img src="https://flagcdn.com/w20/sa.png" alt="SA"> +966</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="nationalId">رقم الهوية / الإقامة</label>
+                <div class="input-wrapper">
+                    <input type="text" id="nationalId" placeholder="أدخل رقم الهوية أو الإقامة" required>
+                    <i class="fa-solid fa-id-card input-icon"></i>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">كلمة المرور</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" placeholder="••••••••" required>
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <i class="fa-solid fa-eye toggle-password" onclick="togglePass()"></i>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">إنشاء حساب</button>
+
+            <div class="form-footer">
+                <p>لديك حساب بالفعل؟ <a href="index.html">تسجيل الدخول</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function togglePass() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.querySelector('.toggle-password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</body>
+</html>
