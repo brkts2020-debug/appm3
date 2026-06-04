@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل الدخول - شركة الأصايل</title>
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-
-<body>
-
 <div class="login-container">
 
     <div class="lock-icon">
@@ -19,87 +5,44 @@
     </div>
 
     <h2>تسجيل الدخول</h2>
+
     <p class="company-name">
-        شركة الأصايل للمقاولات العامة - مصر
+        شركة الأصايل للمقاولات العامة
     </p>
 
-    <form id="loginForm">
+    <form>
 
         <div class="input-group">
-            <label for="identity">
-                رقم الهوية / الإقامة
-            </label>
-
+            <label>رقم الهوية / الإقامة</label>
             <input
                 type="text"
-                id="identity"
-                placeholder="أدخل رقم الهوية أو الإقامة"
-                required
-            >
+                placeholder="أدخل رقم الهوية">
         </div>
 
         <div class="input-group">
-            <label for="password">
-                كلمة المرور
-            </label>
+            <label>كلمة المرور</label>
 
             <div class="password-wrapper">
-
                 <input
                     type="password"
                     id="password"
-                    placeholder="••••••••"
-                    required
-                >
+                    placeholder="••••••••">
 
                 <button
                     type="button"
                     class="toggle-password"
-                    id="togglePassword"
-                >
-                    <i class="far fa-eye"></i>
-                </button>
+                    id="togglePassword">
 
+                    <i class="far fa-eye"></i>
+
+                </button>
             </div>
         </div>
 
-        <button type="submit" class="submit-btn">
-            تسجيل دخول
+        <button class="submit-btn">
+            تسجيل الدخول
         </button>
 
     </form>
 
-    <div class="register-link">
-        <a href="register.html">
-            لا أمتلك حساب؟ إنشاء حساب
-        </a>
-    </div>
-
 </div>
-
-<script>
-    const pass = document.getElementById("password"),
-          btn = document.getElementById("togglePassword"),
-          identity = document.getElementById("identity");
-
-    // إظهار وإخفاء كلمة المرور
-    btn.onclick = () => {
-        pass.type =
-            pass.type === "password"
-            ? "text"
-            : "password";
-
-        btn.innerHTML =
-            pass.type === "password"
-            ? '<i class="far fa-eye"></i>'
-            : '<i class="far fa-eye-slash"></i>';
-    };
-
-    // أرقام فقط للهوية
-    identity.oninput = () =>
-        identity.value =
-            identity.value.replace(/\D/g, "");
-</script>
-
-</body>
-</html>
