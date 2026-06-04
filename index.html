@@ -1,192 +1,248 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
 
-    <title>تسجيل الدخول - شركة الأصايل</title>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cairo',sans-serif;
+}
 
-    <!-- ملف التنسيق -->
-    <link rel="stylesheet" href="css/style.css" />
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    linear-gradient(135deg,#0f172a,#1e293b);
+    overflow:hidden;
+    position:relative;
+}
 
-    <!-- أيقونات -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-</head>
+/* دوائر احترافية بالخلفية */
+body::before,
+body::after{
+    content:'';
+    position:absolute;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.5;
+}
 
-<body>
+body::before{
+    width:300px;
+    height:300px;
+    background:#2563eb;
+    top:-100px;
+    right:-80px;
+}
 
-    <main class="login-container">
+body::after{
+    width:260px;
+    height:260px;
+    background:#06b6d4;
+    bottom:-80px;
+    left:-70px;
+}
 
-        <!-- أيقونة القفل -->
-        <div class="lock-icon-wrapper">
-            <div class="lock-icon">
-                <i class="fas fa-lock"></i>
-            </div>
-        </div>
+/* الكارت */
+.login-container{
+    width:100%;
+    max-width:360px;
+    padding:32px 26px;
+    border-radius:28px;
 
-        <!-- العنوان -->
-        <header>
-            <h1>تسجيل الدخول</h1>
-            <p class="company-name">
-                شركة الأصايل للمقاولات العامة - مصر
-            </p>
-        </header>
+    background:
+    rgba(255,255,255,.08);
 
-        <!-- نموذج تسجيل الدخول -->
-        <form id="loginForm" novalidate>
+    border:1px solid
+    rgba(255,255,255,.12);
 
-            <!-- رقم الهوية -->
-            <div class="input-group">
-                <label for="identity">
-                    رقم الهوية / الإقامة
-                </label>
+    backdrop-filter:blur(20px);
 
-                <input
-                    type="text"
-                    id="identity"
-                    name="identity"
-                    placeholder="أدخل رقم الهوية أو الإقامة"
-                    inputmode="numeric"
-                    autocomplete="username"
-                    maxlength="20"
-                    required
-                >
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.35);
 
-                <small class="error-message" id="identityError"></small>
-            </div>
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
 
-            <!-- كلمة المرور -->
-            <div class="input-group">
-                <label for="password">
-                    كلمة المرور
-                </label>
+/* القفل */
+.lock-icon-wrapper{
+    margin-bottom:18px;
+}
 
-                <div class="password-wrapper">
+.lock-icon{
+    width:78px;
+    height:78px;
+    margin:auto;
 
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="••••••••"
-                        autocomplete="current-password"
-                        minlength="6"
-                        required
-                    >
+    border-radius:22px;
 
-                    <button
-                        type="button"
-                        class="toggle-password"
-                        id="togglePassword"
-                        aria-label="إظهار كلمة المرور"
-                    >
-                        <i class="far fa-eye"></i>
-                    </button>
-                </div>
+    background:
+    linear-gradient(
+    135deg,
+    #3b82f6,
+    #2563eb);
 
-                <small class="error-message" id="passwordError"></small>
-            </div>
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-            <!-- زر الدخول -->
-            <button type="submit" class="submit-btn">
-                تسجيل الدخول
-            </button>
+    color:#fff;
+    font-size:30px;
 
-        </form>
+    box-shadow:
+    0 10px 25px
+    rgba(37,99,235,.35);
+}
 
-        <!-- إنشاء حساب -->
-        <div class="register-link">
-            <a href="register.html">
-                لا أمتلك حساب؟ إنشاء حساب
-            </a>
-        </div>
+/* العنوان */
+h1{
+    color:#fff;
+    font-size:30px;
+    margin-bottom:6px;
+    font-weight:700;
+}
 
-    </main>
+.company-name{
+    color:rgba(255,255,255,.75);
+    font-size:13px;
+    margin-bottom:25px;
+}
 
-    <script>
-        // العناصر
-        const loginForm = document.getElementById("loginForm");
-        const identityInput = document.getElementById("identity");
-        const passwordInput = document.getElementById("password");
-        const togglePassword = document.getElementById("togglePassword");
+/* الحقول */
+.input-group{
+    margin-bottom:18px;
+    text-align:right;
+}
 
-        const identityError =
-            document.getElementById("identityError");
+.input-group label{
+    display:block;
+    color:#fff;
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:600;
+}
 
-        const passwordError =
-            document.getElementById("passwordError");
+.input-group input{
+    width:100%;
+    height:52px;
+    border-radius:16px;
+    border:1px solid
+    rgba(255,255,255,.10);
 
+    background:
+    rgba(255,255,255,.08);
 
-        // إظهار وإخفاء كلمة المرور
-        togglePassword.addEventListener("click", () => {
+    outline:none;
+    padding:0 16px;
+    color:#fff;
+    font-size:14px;
+    transition:.3s;
+}
 
-            const isPassword =
-                passwordInput.type === "password";
+/* placeholder */
+.input-group input::placeholder{
+    color:rgba(255,255,255,.45);
+}
 
-            passwordInput.type =
-                isPassword ? "text" : "password";
+/* focus */
+.input-group input:focus{
+    border-color:#60a5fa;
 
-            const icon =
-                togglePassword.querySelector("i");
+    box-shadow:
+    0 0 0 4px
+    rgba(96,165,250,.15);
+}
 
-            icon.classList.toggle("fa-eye");
-            icon.classList.toggle("fa-eye-slash");
+/* كلمة المرور */
+.password-wrapper{
+    position:relative;
+}
 
-            togglePassword.setAttribute(
-                "aria-label",
-                isPassword
-                    ? "إخفاء كلمة المرور"
-                    : "إظهار كلمة المرور"
-            );
-        });
+.toggle-password{
+    position:absolute;
+    left:14px;
+    top:50%;
+    transform:translateY(-50%);
+    border:none;
+    background:none;
+    cursor:pointer;
+    color:#cbd5e1;
+    font-size:18px;
+    transition:.3s;
+}
 
+.toggle-password:hover{
+    color:#fff;
+}
 
-        // السماح بالأرقام فقط في الهوية
-        identityInput.addEventListener("input", () => {
-            identityInput.value =
-                identityInput.value.replace(/\D/g, "");
-        });
+/* زر الدخول */
+.submit-btn{
+    width:100%;
+    height:54px;
+    border:none;
+    border-radius:18px;
 
+    background:
+    linear-gradient(
+    135deg,
+    #2563eb,
+    #3b82f6);
 
-        // التحقق من البيانات
-        loginForm.addEventListener("submit", (e) => {
-            e.preventDefault();
+    color:#fff;
+    font-size:16px;
+    font-weight:700;
 
-            // تصفير الرسائل
-            identityError.textContent = "";
-            passwordError.textContent = "";
+    cursor:pointer;
+    transition:.3s;
+    margin-top:8px;
+}
 
-            let isValid = true;
+.submit-btn:hover{
+    transform:translateY(-2px);
 
-            // تحقق الهوية
-            if (!identityInput.value.trim()) {
-                identityError.textContent =
-                    "يرجى إدخال رقم الهوية أو الإقامة";
-                isValid = false;
-            }
+    box-shadow:
+    0 10px 30px
+    rgba(37,99,235,.35);
+}
 
-            // تحقق كلمة المرور
-            if (passwordInput.value.length < 6) {
-                passwordError.textContent =
-                    "كلمة المرور يجب ألا تقل عن 6 أحرف";
-                isValid = false;
-            }
+/* إنشاء حساب */
+.register-link{
+    margin-top:18px;
+}
 
-            // نجاح التحقق
-            if (isValid) {
+.register-link a{
+    color:#bfdbfe;
+    text-decoration:none;
+    font-size:13px;
+    transition:.3s;
+}
 
-                const loginData = {
-                    identity: identityInput.value,
-                    password: passwordInput.value
-                };
+.register-link a:hover{
+    color:#fff;
+}
 
-                console.log("بيانات الدخول:", loginData);
+/* رسائل الخطأ */
+.error-message{
+    display:block;
+    margin-top:6px;
+    font-size:12px;
+    color:#fca5a5;
+}
 
-                // هنا ضع API أو عملية تسجيل الدخول
-                alert("تم تسجيل الدخول بنجاح");
-            }
-        });
-    </script>
+/* موبايل */
+@media(max-width:420px){
 
-</body>
-</html>
+    .login-container{
+        width:92%;
+        padding:28px 20px;
+        border-radius:24px;
+    }
+
+    h1{
+        font-size:25px;
+    }
+
+}
