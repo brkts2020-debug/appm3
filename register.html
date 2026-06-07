@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إنشاء حساب | شركة الاصايل</title>
+    <title>إنشاء حساب | شركة الأصايل</title>
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -22,13 +22,6 @@
 
         <div class="login-card">
 
-            <!-- Logo -->
-            <div class="logo-wrapper">
-                <div class="logo-circle">
-                    <i class="fas fa-building"></i>
-                </div>
-            </div>
-
             <!-- Header -->
             <div class="login-header">
                 <h1>إنشاء حساب جديد</h1>
@@ -38,20 +31,22 @@
                 </p>
 
                 <p class="sub-text">
-                    قم بإنشاء حساب جديد
+                    قم بإنشاء حساب جديد للمتابعة
                 </p>
             </div>
 
             <!-- Form -->
             <form id="registerForm">
 
-                <!-- الاسم -->
+                <!-- الاسم الكامل -->
                 <div class="input-group">
+
                     <label for="fullName">
                         الاسم الكامل
                     </label>
 
                     <div class="input-wrapper">
+
                         <i class="fas fa-user input-icon"></i>
 
                         <input
@@ -59,16 +54,20 @@
                             id="fullName"
                             placeholder="أدخل الاسم الكامل"
                             required>
+
                     </div>
+
                 </div>
 
-                <!-- الجوال -->
+                <!-- رقم الجوال -->
                 <div class="input-group">
+
                     <label for="phone">
                         رقم الجوال
                     </label>
 
                     <div class="input-wrapper">
+
                         <i class="fas fa-phone input-icon"></i>
 
                         <input
@@ -76,17 +75,22 @@
                             id="phone"
                             placeholder="5xxxxxxxx"
                             maxlength="9"
+                            inputmode="numeric"
                             required>
+
                     </div>
+
                 </div>
 
-                <!-- الهوية -->
+                <!-- رقم الهوية -->
                 <div class="input-group">
+
                     <label for="nationalId">
                         رقم الهوية / الإقامة
                     </label>
 
                     <div class="input-wrapper">
+
                         <i class="fas fa-id-card input-icon"></i>
 
                         <input
@@ -94,17 +98,22 @@
                             id="nationalId"
                             placeholder="أدخل رقم الهوية"
                             maxlength="20"
+                            inputmode="numeric"
                             required>
+
                     </div>
+
                 </div>
 
                 <!-- كلمة المرور -->
                 <div class="input-group">
+
                     <label for="password">
                         كلمة المرور
                     </label>
 
                     <div class="input-wrapper">
+
                         <i class="fas fa-lock input-icon"></i>
 
                         <input
@@ -119,11 +128,14 @@
                             class="toggle-password">
 
                             <i class="far fa-eye"></i>
+
                         </button>
+
                     </div>
+
                 </div>
 
-                <!-- الزر داخل الفورم -->
+                <!-- زر إنشاء الحساب -->
                 <button
                     type="submit"
                     class="submit-btn">
@@ -134,12 +146,15 @@
 
             </form>
 
-            <!-- رابط الدخول -->
+            <!-- رابط تسجيل الدخول -->
             <div class="register-link">
+
                 لديك حساب بالفعل؟
+
                 <a href="index.html">
                     تسجيل الدخول
                 </a>
+
             </div>
 
         </div>
@@ -159,12 +174,13 @@
         const phone =
             document.getElementById("phone");
 
-        // أرقام فقط
+        // أرقام فقط للهوية
         nationalId.addEventListener("input", () => {
             nationalId.value =
                 nationalId.value.replace(/\D/g, "");
         });
 
+        // أرقام فقط للجوال
         phone.addEventListener("input", () => {
             phone.value =
                 phone.value.replace(/\D/g, "");
@@ -181,10 +197,11 @@
 
             toggle.innerHTML =
                 hidden
-                ? '<i class="far fa-eye-slash"></i>'
-                : '<i class="far fa-eye"></i>';
+                    ? '<i class="far fa-eye-slash"></i>'
+                    : '<i class="far fa-eye"></i>';
         });
     </script>
 
 </body>
+
 </html>
