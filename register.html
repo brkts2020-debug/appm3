@@ -38,14 +38,14 @@
                 </p>
 
                 <p class="sub-text">
-                    قم بإنشاء حساب جديد للمتابعة
+                    قم بإنشاء حساب جديد
                 </p>
             </div>
 
             <!-- Form -->
             <form id="registerForm">
 
-                <!-- Full Name -->
+                <!-- الاسم -->
                 <div class="input-group">
                     <label for="fullName">
                         الاسم الكامل
@@ -62,15 +62,13 @@
                     </div>
                 </div>
 
-                <!-- Phone -->
+                <!-- الجوال -->
                 <div class="input-group">
-
                     <label for="phone">
                         رقم الجوال
                     </label>
 
                     <div class="input-wrapper">
-
                         <i class="fas fa-phone input-icon"></i>
 
                         <input
@@ -78,23 +76,17 @@
                             id="phone"
                             placeholder="5xxxxxxxx"
                             maxlength="9"
-                            inputmode="numeric"
-                            required
-                            style="direction:ltr; text-align:right;">
-
+                            required>
                     </div>
-
                 </div>
 
-                <!-- Identity -->
+                <!-- الهوية -->
                 <div class="input-group">
-
                     <label for="nationalId">
                         رقم الهوية / الإقامة
                     </label>
 
                     <div class="input-wrapper">
-
                         <i class="fas fa-id-card input-icon"></i>
 
                         <input
@@ -103,20 +95,16 @@
                             placeholder="أدخل رقم الهوية"
                             maxlength="20"
                             required>
-
                     </div>
-
                 </div>
 
-                <!-- Password -->
+                <!-- كلمة المرور -->
                 <div class="input-group">
-
                     <label for="password">
                         كلمة المرور
                     </label>
 
                     <div class="input-wrapper">
-
                         <i class="fas fa-lock input-icon"></i>
 
                         <input
@@ -131,14 +119,11 @@
                             class="toggle-password">
 
                             <i class="far fa-eye"></i>
-
                         </button>
-
                     </div>
-
                 </div>
 
-                <!-- Submit -->
+                <!-- الزر داخل الفورم -->
                 <button
                     type="submit"
                     class="submit-btn">
@@ -149,7 +134,7 @@
 
             </form>
 
-            <!-- Login Link -->
+            <!-- رابط الدخول -->
             <div class="register-link">
                 لديك حساب بالفعل؟
                 <a href="index.html">
@@ -174,13 +159,12 @@
         const phone =
             document.getElementById("phone");
 
-        // أرقام فقط للهوية
+        // أرقام فقط
         nationalId.addEventListener("input", () => {
             nationalId.value =
                 nationalId.value.replace(/\D/g, "");
         });
 
-        // أرقام فقط للجوال
         phone.addEventListener("input", () => {
             phone.value =
                 phone.value.replace(/\D/g, "");
@@ -203,5 +187,4 @@
     </script>
 
 </body>
-
 </html>
