@@ -73,12 +73,12 @@
 
             <button class="service-btn"
                 onclick="openService(event,'srv-job')">
-                🛠️ إضافة بند عمل جديد
+                🛠️ إضافة عمل جديد
             </button>
 
             <button class="service-btn"
-                onclick="openService(event,'srv-agreement')">
-                📦 إضافة وحدة قياس أعمال
+                onclick="openService(event,'srv-agreement1')">
+                📦 إضافة وحدة أعمال
             </button>
             <button class="service-btn"
                 onclick="openService(event,'srv-agreement')">
@@ -107,9 +107,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label>اسم المشروع</label>
+                    <label>اسم المقاول</label>
                     <input type="text"
-                        placeholder="أدخل اسم المشروع">
+                        placeholder="أدخل اسم المقاول">
                 </div>
                 <div class="form-group">
                     <label >تاريخ الاتفاق</label>
@@ -247,6 +247,31 @@
                     إضافة وحدة أعمال
                 </div>
             </div>
+               <div id="srv-agreement1"
+                class="workspace-card">
+
+                <div class="card-title">
+                 اضافة وحدة قياس جديدة
+                </div>
+
+                 <div class="form-group">
+                    <label>اسم الوحدة</label>
+                    <input type="text"
+                        placeholder="أدخل اسم الوحدة">
+                </div>
+
+                <div class="form-group">
+                    <label >تاريخ الاضافة</label>
+                    <input type="date">
+                </div>
+
+                <button class="action-btn">
+                  اضافة
+                </button>
+
+            </div> 
+
+
 
         </div>
     </div>
