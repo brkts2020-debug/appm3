@@ -1,12 +1,3 @@
-<?php
-session_start();
-
-// إذا لم يكن هناك معرف مستخدم مسجل في الجلسة، اطرده فوراً إلى صفحة تسجيل الدخول
-if (!isset($_SESSION['user_id'])) {
-    header("Location: index.html");
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
